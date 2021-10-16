@@ -114,7 +114,7 @@ then
 idf.py build
 ```
 ## Contributors
-* [Krishna Narayan](https://github.com/Krishna-13-cyber)
+* [Krishna Narayanan](https://github.com/Krishna-13-cyber)
 * [Om Sheladia](https://github.com/omsheladia)
 
 ## Acknowledgements and Resources

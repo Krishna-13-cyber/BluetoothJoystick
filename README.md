@@ -118,7 +118,7 @@ idf.py build
 * [Om Sheladia](https://github.com/omsheladia)
 
 ## Acknowledgements and Resources
-* [SRA-VJTI responsible for the creation of project](http://sra.vjti.info/) Eklavya 2021 
+* [SRA-VJTI responsible for the creation of project](https://sravjti.in/) Eklavya 2021 
 * Special thanks to [Gautam Agrawal](https://github.com/gautam-dev-maker)
 * Special thanks to [Dhairya Shah](https://github.com/dhairyashah1) 
 * https://github.com/nkolban/esp32-snippets

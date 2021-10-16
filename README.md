@@ -1,5 +1,5 @@
 # BluetoothJoystick
-Bluetooth Joystick : A wireless joystick with ESP-32 microcontrollerand Dual Axis Joystick Module using the Bluetooth connectivity.
+Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Axis Joystick Module using the Bluetooth connectivity.
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents

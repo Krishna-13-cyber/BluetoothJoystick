@@ -64,7 +64,6 @@ cd BluetoothJoystick
 ## Hardware
 ### Connections
 Connect the ESP32 to your desktop via USB to flash the code in it. And connect the Joystick to ESP32 as per the table given below.
-![JoyStick Used](![BLE Gamepad](https://content.instructables.com/ORIG/FUD/I8PF/KJUBPHF5/FUDI8PFKJUBPHF5.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=a2afa2e5c6a83ad41410efc3edba51ba)  
 ![ESP32 Pin Layout](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
 JoyStick Pin | ESP32 Pin
 --------- | -----------

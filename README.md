@@ -65,6 +65,8 @@ cd BluetoothJoystick
 ### Connections
 Connect the ESP32 to your desktop via USB to flash the code in it. And connect the Joystick to ESP32 as per the table given below.
 ![ESP32 Pin Layout](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
+![JoyStick Pinout](https://www.researchgate.net/profile/Mobasshir-Mahbub/publication/335611241/figure/fig5/AS:799468190449666@1567619478705/Schematic-diagram-of-joystick-module-c-Pinout.jpg)
+
 JoyStick Pin | ESP32 Pin
 --------- | -----------
 5V | 3V3

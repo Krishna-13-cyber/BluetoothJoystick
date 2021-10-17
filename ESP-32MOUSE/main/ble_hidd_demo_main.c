@@ -1090,7 +1090,7 @@ void uart_console_task(void *pvParameters)
             ESP_LOGI(CONSOLE_UART_TAG,"Not connected, ignoring '%c'", character);
         } 
 	else {
-		esp_hidd_send_mouse_value(hid_conn_id,0,150,0,0);
+		esp_hidd_send_mouse_value(hid_conn_id,0,0,-MOUSE_SPEED,0);
 		ESP_LOGI(CONSOLE_UART_TAG,"mouse: u");
                 
             

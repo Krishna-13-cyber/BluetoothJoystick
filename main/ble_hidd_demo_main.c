@@ -168,7 +168,6 @@ struct cmdBuf {
     uint8_t buf[MAX_CMDLEN];
 };
 
-//static uint8_t manufacturer[19]= {'A', 's', 'T', 'e', 'R', 'I', 'C', 'S', ' ', 'F', 'o', 'u', 'n', 'd', 'a', 't', 'i', 'o', 'n'};
 
 
 static uint8_t hidd_service_uuid128[] = {
@@ -219,12 +218,6 @@ static esp_ble_adv_data_t hidd_adv_data = {
 
 // config scan response data
 ///@todo Scan response is currently not used. If used, add state handling (adv start) according to ble/gatt_security_server example of Espressif
-/*static esp_ble_adv_data_t hidd_adv_resp = {
-    .set_scan_rsp = true,
-    .include_name = true,
-    .manufacturer_len = sizeof(manufacturer),
-    .p_manufacturer_data = manufacturer,
-};*/
 
 static esp_ble_adv_params_t hidd_adv_params = {
     .adv_int_min        = 0x20,
@@ -922,8 +915,7 @@ void uart_parse_command (uint8_t character, struct cmdBuf * cmdBuffer)
                 ESP_LOGI(EXT_UART_TAG,"not connected, cannot send report");
             } else {
                 if (cmdBuffer->buf[1] == 0x00) {   // keyboard report
-                  //  esp_hidd_send_keyboard_value(hid_conn_id,cmdBuffer->buf[0],&cmdBuffer->buf[2],6);
-                    //update timestamp
+                  
                     timestampLastSent = esp_timer_get_time();
                 } else if (cmdBuffer->buf[1] == 0x01) {  // joystick report
                     //ESP_LOGI(EXT_UART_TAG,"joystick: buttons: 0x%X:0x%X:0x%X:0x%X",cmdBuffer->buf[2],cmdBuffer->buf[3],cmdBuffer->buf[4],cmdBuffer->buf[5]);
@@ -1059,8 +1051,6 @@ void blink_task(void *pvParameter)
 void uart_console_task(void *pvParameters)
 {
     char character;
-//    uint8_t kbdcmd[] = {28};
-    //use input as HID test OR as input to processCommand (test commands)
     uint8_t hid_or_command = 0;
     struct cmdBuf commands;
     commands.sendToUART = 0;
@@ -1137,61 +1127,7 @@ void uart_console_task(void *pvParameters)
                 }
                 }
                 }
-            
-            //switch (character) {
-			/*case 'm':
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_MUTE,true);
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_MUTE,false);
-				ESP_LOGI(CONSOLE_UART_TAG,"consumer: mute");
-				break;
-			case 'p':
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_VOLUME_UP,true);
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_VOLUME_UP,false);
-				ESP_LOGI(CONSOLE_UART_TAG,"consumer: volume plus");
-				break;
-			case 'o':
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_VOLUME_DOWN,true);
-				esp_hidd_send_consumer_value(hid_conn_id,HID_CONSUMER_VOLUME_DOWN,false);
-				ESP_LOGI(CONSOLE_UART_TAG,"consumer: volume minus");
-				break;
-            case 'a':
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                ESP_LOGI(CONSOLE_UART_TAG,"mouse: a");
-                break;
-            case 's':
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                ESP_LOGI(CONSOLE_UART_TAG,"mouse: s");
-                break;
-            case 'd':
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                ESP_LOGI(CONSOLE_UART_TAG,"mouse: d");
-                break;
-            case 'w':
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                ESP_LOGI(CONSOLE_UART_TAG,"mouse: w");
-                break;
-            case 'l':
-                esp_hidd_send_mouse_value(hid_conn_id,(1<<0),0,0,0);
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                break;
-            case 'r':
-                esp_hidd_send_mouse_value(hid_conn_id,(1<<1),0,0,0);
-                esp_hidd_send_mouse_value(hid_conn_id,0,0,0,0);
-                ESP_LOGI(CONSOLE_UART_TAG,"mouse: r");
-                break;
-            case 'q':
-                kbdcmd[0] = 28;
-                esp_hidd_send_keyboard_value(hid_conn_id,0,kbdcmd,1);
-                kbdcmd[0] = 0;
-                esp_hidd_send_keyboard_value(hid_conn_id,0,kbdcmd,1);
-                ESP_LOGI(CONSOLE_UART_TAG,"received q: sending key y (z for QWERTZ) for test purposes");
-                break;
-            default:
-                ESP_LOGI(CONSOLE_UART_TAG,"received: %d, no HID action",character);
-                break;*/
-           // }
         
-
 void app_main(void)
 {
     esp_err_t ret;

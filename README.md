@@ -22,8 +22,9 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
 ## About The Project
 The Aim of the Project is to make a Bluetooth Joystick using ESP32 which establishes Bluetooth Low Energy (BLE) Connection with the host device to provide controls by providing inputs. 
 
-This image illustrates how the end product can look like.
-![BLE Gamepad](https://content.instructables.com/ORIG/FUD/I8PF/KJUBPHF5/FUDI8PFKJUBPHF5.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=a2afa2e5c6a83ad41410efc3edba51ba)  
+This image illustrates how our hardware looks like at the current stage
+![Hardware](https://user-images.githubusercontent.com/84867886/137713259-8dfb6e91-b3af-45e9-91c0-fc0ee07c7167.jpeg)
+ 
 
 ### Tech Stack
 The following technologies have been used for the making of this project.
@@ -64,8 +65,7 @@ cd BluetoothJoystick
 ## Hardware
 ### Connections
 Connect the ESP32 to your desktop via USB to flash the code in it. And connect the Joystick to ESP32 as per the table given below.
-![ESP32 Pin Layout](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
-![JoyStick Pinout](https://www.researchgate.net/profile/Mobasshir-Mahbub/publication/335611241/figure/fig5/AS:799468190449666@1567619478705/Schematic-diagram-of-joystick-module-c-Pinout.jpg)
+![Connection Illustration](https://user-images.githubusercontent.com/84867886/137712945-33cc0423-3b61-4909-b2e1-0d28a778a47f.png)
 JoyStick Pin | ESP32 Pin
 --------- | -----------
 5V | 3V3
@@ -93,6 +93,7 @@ idf.py menuconfig
 ## Results and Demo
 The output obtained is shown in the link attached to the below mentioned video.
 [ADC Values](https://drive.google.com/file/d/1rm1N4SgXiCJK_13tnsdQ1i77aFfMDrW-/view?usp=sharing)
+[Movement of Cursor by Joystick](https://drive.google.com/file/d/1VwI7GT10AZU_PWkB9DNiD4OaYqe5EC_o/view?usp=sharing)
 <!-- FUTURE WORK -->
 ## Future Work
 * The following developments are yet to be achieved

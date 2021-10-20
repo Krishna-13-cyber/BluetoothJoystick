@@ -343,17 +343,16 @@ static void hidd_event_callback(esp_hidd_cb_event_t event, esp_hidd_cb_param_t *
 			//check if this addr is in the array
 			if(memcmp(active_connections[i],param->disconnect.remote_bda,sizeof(esp_bd_addr_t)) == 0)
 			{
-				//clear element
-				memset(active_connections[i],0,sizeof(esp_bd_addr_t));
-				//last connection
-				if(i == 0) sec_conn = false;
+//clear element
+memset(active_connections[i],0,sizeof(esp_bd_addr_t));
+//last connection
+if(i == 0) sec_conn = false;
 				
-				//TODO: currently we the first connection id after disconnect.
-				//maybe we should do it differently?
-				if(i != 0) hid_conn_id = 0;
-				
-				ESP_LOGI(HID_DEMO_TAG, "ESP_HIDD_EVENT_BLE_DISCONNECT: removed from array @%d",i);
-				break;
+	//TODO: currently we the first connection id after disconnect.
+	//maybe we should do it differently?
+	if(i != 0) hid_conn_id = 0;
+	ESP_LOGI(HID_DEMO_TAG, "ESP_HIDD_EVENT_BLE_DISCONNECT: removed from array @%d",i);
+	break;
 			}
 		}
         ESP_LOGI(HID_DEMO_TAG, "ESP_HIDD_EVENT_BLE_DISCONNECT");
@@ -439,22 +438,22 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
         esp_ble_gap_cb_param_t *scan_result = (esp_ble_gap_cb_param_t *)param;
         switch (scan_result->scan_rst.search_evt) {
 			case ESP_GAP_SEARCH_INQ_RES_EVT:
-				//esp_log_buffer_hex(HID_DEMO_TAG, scan_result->scan_rst.bda, 6);
-				//ESP_LOGI(HID_DEMO_TAG, "Searched Adv Data Len %d, Scan Response Len %d", scan_result->scan_rst.adv_data_len, scan_result->scan_rst.scan_rsp_len);
-				adv_name = esp_ble_resolve_adv_data(scan_result->scan_rst.ble_adv, ESP_BLE_AD_TYPE_NAME_CMPL, &adv_name_len);
-				if(adv_name_len == 0) adv_name = esp_ble_resolve_adv_data(scan_result->scan_rst.ble_adv, ESP_BLE_AD_TYPE_NAME_SHORT, &adv_name_len);
-				//ESP_LOGI(HID_DEMO_TAG, "Searched Device Name Len %d", adv_name_len);
-				//esp_log_buffer_char(HID_DEMO_TAG, adv_name, adv_name_len);
-				//ESP_LOGI(HID_DEMO_TAG, "\n");
-				if (adv_name != NULL) {
-					//store name to BT addr...
-					esp_log_buffer_hex(HID_DEMO_TAG, scan_result->scan_rst.bda, 6);
-					esp_log_buffer_char(HID_DEMO_TAG, adv_name, adv_name_len);
-					adv_name[adv_name_len] = '\0';
-					char key[13];
-					sprintf(key,"%02X%02X%02X%02X%02X%02X",scan_result->scan_rst.bda[0],scan_result->scan_rst.bda[1], \
-						scan_result->scan_rst.bda[2],scan_result->scan_rst.bda[3],scan_result->scan_rst.bda[4],scan_result->scan_rst.bda[5]);
-					if(nvs_set_str(nvs_bt_name_h,key,(char*)adv_name) == ESP_OK)
+	//esp_log_buffer_hex(HID_DEMO_TAG, scan_result->scan_rst.bda, 6);
+	//ESP_LOGI(HID_DEMO_TAG, "Searched Adv Data Len %d, Scan Response Len %d", scan_result->scan_rst.adv_data_len, scan_result->scan_rst.scan_rsp_len);
+	adv_name = esp_ble_resolve_adv_data(scan_result->scan_rst.ble_adv, ESP_BLE_AD_TYPE_NAME_CMPL, &adv_name_len);
+i	f(adv_name_len == 0) adv_name = esp_ble_resolve_adv_data(scan_result->scan_rst.ble_adv, ESP_BLE_AD_TYPE_NAME_SHORT, &adv_name_len);
+	//ESP_LOGI(HID_DEMO_TAG, "Searched Device Name Len %d", adv_name_len);
+	//esp_log_buffer_char(HID_DEMO_TAG, adv_name, adv_name_len);
+	//ESP_LOGI(HID_DEMO_TAG, "\n");
+	if (adv_name != NULL) {
+	//store name to BT addr...
+	esp_log_buffer_hex(HID_DEMO_TAG, scan_result->scan_rst.bda, 6);
+	esp_log_buffer_char(HID_DEMO_TAG, adv_name, adv_name_len);
+	adv_name[adv_name_len] = '\0';
+	char key[13];
+	sprintf(key,"%02X%02X%02X%02X%02X%02X",scan_result->scan_rst.bda[0],scan_result->scan_rst.bda[1], \
+	scan_result->scan_rst.bda[2],scan_result->scan_rst.bda[3],scan_result->scan_rst.bda[4],scan_result->scan_rst.bda[5]);
+	if(nvs_set_str(nvs_bt_name_h,key,(char*)adv_name) == ESP_OK)
 					{
 						ESP_LOGI(HID_DEMO_TAG,"Saved %s to %s",adv_name, key);
 					} else ESP_LOGW(HID_DEMO_TAG,"Error saving %s for %s",adv_name,key);
@@ -989,9 +988,9 @@ void uart_external_task(void *pvParameters)
 	}
 
 
-    //Install UART driver, and get the queue.
-    esp_err_t ret = ESP_OK;
-    const uart_config_t uart_config = {
+         //Install UART driver, and get the queue.
+         esp_err_t ret = ESP_OK;
+         const uart_config_t uart_config = {
         .baud_rate = 9600,
         .data_bits = UART_DATA_8_BITS,
         .parity = UART_PARITY_DISABLE,
@@ -1089,14 +1088,11 @@ void uart_console_task(void *pvParameters)
 	adc1_config_width(ADC_WIDTH_BIT_12);
     adc1_config_channel_atten(ADC1_CHANNEL_3,ADC_ATTEN_DB_11); 
     int val1 = adc1_get_raw(ADC1_CHANNEL_3);
-   // adc1_config_width(ADC_WIDTH_BIT_12);
-//adc1_config_channel_atten(ADC1_CHANNEL_6,ADC_ATTEN_DB_11); 
-  //  int val2 = adc1_get_raw(ADC1_CHANNEL_6);
+
     while(1)
 	{	
     
      val1 = adc1_get_raw(ADC1_CHANNEL_3);
-   //  val2 = adc1_get_raw(ADC1_CHANNEL_6);
    
       if(val1>=0&&val1<=1000)
        {
@@ -1120,10 +1116,7 @@ void uart_console_task(void *pvParameters)
     }
 }
  xTaskCreate(&adc_task,"adc_task",4096,NULL,1,NULL);
-/*void app_main(void)
-{
-    xTaskCreate(&adc_task,"adc_task",4096,NULL,1,NULL);
-}*/
+
                 }
                 }
                 }

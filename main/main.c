@@ -1081,23 +1081,19 @@ void uart_console_task(void *pvParameters)
             ESP_LOGI(CONSOLE_UART_TAG,"Not connected, ignoring '%c'", character);
         } 
 	else {
-		//esp_hidd_send_mouse_value(hid_conn_id,0,0,-MOUSE_SPEED,0);//This is where the actual parameters are supplied
-		//ESP_LOGI(CONSOLE_UART_TAG,"mouse: u");
+	
               void adc_task(void *arg)
 {
 
 	adc1_config_width(ADC_WIDTH_BIT_12);
     adc1_config_channel_atten(ADC1_CHANNEL_3,ADC_ATTEN_DB_11); 
     int val1 = adc1_get_raw(ADC1_CHANNEL_3);
-   // adc1_config_width(ADC_WIDTH_BIT_12);
-//adc1_config_channel_atten(ADC1_CHANNEL_6,ADC_ATTEN_DB_11); 
-  //  int val2 = adc1_get_raw(ADC1_CHANNEL_6);
+  
     while(1)
 	{	
     
      val1 = adc1_get_raw(ADC1_CHANNEL_3);
-   //  val2 = adc1_get_raw(ADC1_CHANNEL_6);
-   
+  #ifdef CONFIG_MODULE_USEMOUSE
       if(val1>=0&&val1<=1000)
        {
 	esp_hidd_send_mouse_value(hid_conn_id,0,0,-MOUSE_SPEED,0);//This is where the actual parameters are supplied
@@ -1117,13 +1113,13 @@ void uart_console_task(void *pvParameters)
 	      printf("\n");
  
         vTaskDelay(10 / portTICK_PERIOD_MS);  
+  
+    #endif
+       
     }
 }
  xTaskCreate(&adc_task,"adc_task",4096,NULL,1,NULL);
-/*void app_main(void)
-{
-    xTaskCreate(&adc_task,"adc_task",4096,NULL,1,NULL);
-}*/
+
                 }
                 }
                 }

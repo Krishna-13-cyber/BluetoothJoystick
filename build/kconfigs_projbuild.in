@@ -1,0 +1,7 @@
+source "/home/krishna/esp/esp-idf/components/app_update/Kconfig.projbuild"
+source "/home/krishna/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "/home/krishna/esp/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "/home/krishna/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "/home/krishna/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "/home/krishna/Desktop/BluetoothJoystick/main/Kconfig.projbuild"
+source "/home/krishna/Desktop/BluetoothJoystick/components/esp32_mouse/Kconfig.projbuild"

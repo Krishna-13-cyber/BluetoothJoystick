@@ -94,6 +94,7 @@ idf.py menuconfig
 The output obtained is shown in the link attached to the below mentioned video.
 *[ADC Values](https://drive.google.com/file/d/1rm1N4SgXiCJK_13tnsdQ1i77aFfMDrW-/view?usp=sharing)
 *[Movement of Cursor by Joystick](https://drive.google.com/file/d/1VwI7GT10AZU_PWkB9DNiD4OaYqe5EC_o/view?usp=sharing)
+![Mouse-Game](https://github.com/Krishna-13-cyber/BluetoothJoystick/blob/main/docs/MouseGame.gif)
 <!-- FUTURE WORK -->
 ## Future Work
 * The following developments are yet to be achieved

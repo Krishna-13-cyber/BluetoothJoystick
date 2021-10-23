@@ -3,7 +3,9 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := app-template
+PROJECT_NAME := hidd_demos
+
+COMPONENT_ADD_INCLUDEDIRS := components/include	\
+								
 
 include $(IDF_PATH)/make/project.mk
-

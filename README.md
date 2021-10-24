@@ -22,7 +22,8 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The Aim of the Project is to make a Bluetooth Joystick using ESP32 which establishes Bluetooth Low Energy (BLE) Connection with the host device to provide controls by providing inputs. 
+### Aim 
+This aim of the project is to make a Bluetooth Joystick using ESP32 which establishes Bluetooth Low Energy (BLE) Connection with the host device to provide controls by providing inputs. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
 
 This image illustrates how our hardware looks like at the current stage
 ![Hardware](https://user-images.githubusercontent.com/84867886/137713259-8dfb6e91-b3af-45e9-91c0-fc0ee07c7167.jpeg)
@@ -93,8 +94,6 @@ Configuration
 idf.py menuconfig
 ```
 ## Theory and Approach
-### Aim:
-This project aims to make a joystick which can be controlled using ESP 32 , this device and the host device/ game's brain controller will be connected over bluetooth. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
 
 ### Theory:
 The main motto of the project is to make the setup wireless.This can be achieved by using the ability of ESP-32 to have BLE within it with which it can be connected over bluetooth to the Computer System and returns the value according to the movement of the joystick.The esp-idf(Espressif's official IoT Development Framework)which was the main resource for our project, has all the information about the pinning system and channels present have to be read and their use have to studied from here.The framework tells us the about the channels which can be used,the usage of pins for different functions(ADC,DAC,GRD).The channels which are more efficient to use in bluetooth connectivity.There is a dual-axis high quality JoyStick Module . It can be used to sense movements in 2 directions(axes). It also has an inbuilt switch which can be activated by pressing the stick.This is the joystick module which we are using in the project.

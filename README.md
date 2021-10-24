@@ -11,6 +11,7 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
   * [Prerequisites](#prerequisites)
 * [Usage](#usage)
 * [Connections](#connections)
+* [Theory and Approach}(#theory-and-approach)
 * [Results and Demo](#results-and-demo)
 * [Future Work](#future-work)
 * [Troubleshooting](#troubleshooting)
@@ -90,6 +91,7 @@ Configuration
 ```
 idf.py menuconfig
 ```
+## Theory and Approach
 ## Results and Demo
 The output obtained is shown in the link attached to the below mentioned video.
 * [ADC Values](https://drive.google.com/file/d/1rm1N4SgXiCJK_13tnsdQ1i77aFfMDrW-/view?usp=sharing)

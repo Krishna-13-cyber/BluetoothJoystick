@@ -13,6 +13,7 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
 * [Connections](#connections)
 * [Theory and Approach](#theory-and-approach)
 * [Results and Demo](#results-and-demo)
+* [Code Flowchart](#code-flowchart)
 * [Future Work](#future-work)
 * [Troubleshooting](#troubleshooting)
 * [Contributors](#contributors)
@@ -92,16 +93,17 @@ Configuration
 idf.py menuconfig
 ```
 ## Theory and Approach
-### Aim:
-This project aims to make a joystick which can be controlled using ESP 32 , this device and the host device/ game's brain controller will be connected over bluetooth. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
+Aim:This project aims to make a joystick which can be controlled using ESP 32 , this device and the host device/ game's brain controller will be connected over bluetooth. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
 
-### Theory:
+Theory:
 The main motto of the project is to make the setup wireless.This can be achieved by using the ability of ESP-32 to have BLE within it with which it can be connected over bluetooth to the Computer System and returns the value according to the movement of the joystick.The esp-idf(Espressif's official IoT Development Framework)which was the main resource for our project, has all the information about the pinning system and channels present have to be read and their use have to studied from here.The framework tells us the about the channels which can be used,the usage of pins for different functions(ADC,DAC,GRD).The channels which are more efficient to use in bluetooth connectivity.There is a dual-axis high quality JoyStick Module . It can be used to sense movements in 2 directions(axes). It also has an inbuilt switch which can be activated by pressing the stick.This is the joystick module which we are using in the project.
 The values received from the ADC are the voltage values(raw values),as voltage values which are analog are first converted to binary and then to digital format,So it is obtained in the raw form.The ADC values are ranging from 0-4095 as it works on 12 bit,that is it has 4096 values.The values returned depend on the movement of joystick and returns extreme values for the end point movement. The joystick, depending on the requirement of the game or task,its use can be changed and modified in 2-D constraint(joystick supports 2-D movements only).
 
-### Approach:
+Approach:
 The approach of the project is quite simple and understandable,first of all its aim is to make a bluetooth joystick.To take a look at the hardware stuff we need a joystick module(2-D module in this project),a ESP-32 microcontroller(according to the version kitc the pinout may vary),jumper wires for connection.For the bluetooth establishment we tried by connecting our esp32 as a mouse.To understand when the connection is established how does the mouse behave as in the cursor.Next we start to connect the proper pinout connection of the ESP-32 to the Joystick.
 So we want the system to know that if a joystick is moved the ESP-32 send or returns some value,for that we have the concept of ADC,this continuously send the instant voltage values and when we move our joystick in different direction(2-D) it returns different values(extreme values are expected).Then finally we have integrate both together that is the bluetooth part and joystick returned values(which will tell the movement according to our code).This will complete our project and can be modified to be used in games.
+## Code Flowchart
+![Flowchart](https://user-images.githubusercontent.com/84867886/138583223-d8353de8-228b-41de-8cc5-d18d5cb22d7a.png)
 
 ## Results and Demo
 These are the output obtained in initial stage as shown in the link attached to the below mentioned video.

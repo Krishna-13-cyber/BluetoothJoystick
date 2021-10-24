@@ -103,12 +103,13 @@ The approach of the project is quite simple and understandable First of all its 
 So we want the system to know that if a joystick is moved the ESP-32 send or returns some value,for that we have the concept of ADC,this continuously send the instant voltage values and when we move our joystick in different direction(2-D) it returns different values(extreme values are expected).Then finally we have integrate both together that is the bluetooth part and joystick returned values(which will tell the movement according to our code).This will complete our project and can be modified to be used in games.
 
 ## Results and Demo
-The output obtained is shown in the link attached to the below mentioned video.
+These are the output obtained in initial stage as shown in the link attached to the below mentioned video.
 * [ADC Values](https://drive.google.com/file/d/1rm1N4SgXiCJK_13tnsdQ1i77aFfMDrW-/view?usp=sharing)
 * [Movement of Cursor by Joystick](https://drive.google.com/file/d/1VwI7GT10AZU_PWkB9DNiD4OaYqe5EC_o/view?usp=sharing)
 
-This the Output of the Game played with help of Joystick Module.
+These are the Output of the Games played with help of Joystick Module.
 ![Mouse-Game](https://github.com/Krishna-13-cyber/BluetoothJoystick/blob/main/docs/MouseGame.gif)
+![Mouse-Game2](https://github.com/Krishna-13-cyber/BluetoothJoystick/blob/main/docs/Game2.gif)
 <!-- FUTURE WORK -->
 ## Future Work
 * The following developments are yet to be achieved

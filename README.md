@@ -11,7 +11,7 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
   * [Prerequisites](#prerequisites)
 * [Usage](#usage)
 * [Connections](#connections)
-* [Theory and Approach}(#theory-and-approach)
+* [Theory and Approach](#theory-and-approach)
 * [Results and Demo](#results-and-demo)
 * [Future Work](#future-work)
 * [Troubleshooting](#troubleshooting)

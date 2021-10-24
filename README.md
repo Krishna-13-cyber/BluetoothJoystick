@@ -122,8 +122,10 @@ These are the Output of the Games played with help of Joystick Module.
 * The following developments are yet to be achieved
 - [x] Establishing BlueTooth Connection
 - [x] Obtaining ADC Values
-- [ ] Moving the Cursor 
-- [ ] Controlling a Game
+- [x] Moving the Cursor 
+- [x] Controlling a Game
+- [ ] Using it to send keyboard keys
+- [ ] Adding more buttons to it
 
 ## Troubleshooting
  While Configuring for the first time if you face any problem, check the ESP-IDF's Menu Configuration

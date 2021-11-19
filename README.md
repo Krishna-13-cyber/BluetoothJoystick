@@ -23,7 +23,7 @@ Bluetooth Joystick : A wireless joystick with ESP-32 microcontroller and Dual Ax
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 ### Aim 
-This aim of the project is to make a Bluetooth Joystick using ESP32 which establishes Bluetooth Low Energy (BLE) Connection with the host device to provide controls by providing inputs. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
+The aim of this project is to make a Bluetooth Joystick using ESP32 which establishes Bluetooth Low Energy (BLE) Connection with the host device to provide controls by providing inputs. The ESP32 is capable of getting a unique signal for each key press. Accordingly it will transmit the signal information over bluetooth to the host device.
 
 ### This image illustrates how our hardware looks like at the current stage
 ![Hardware](https://user-images.githubusercontent.com/84867886/137713259-8dfb6e91-b3af-45e9-91c0-fc0ee07c7167.jpeg)
